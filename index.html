@@ -23,16 +23,16 @@
             <div class="collapse navbar-collapse" id="navbarFood">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item me-5">
-                        <a class="nav-link" href="#">Pizza</a>
+                        <a class="nav-link" href="javascript:void(0)" food-type="pizza">Pizza</a>
                     </li>
                     <li class="nav-item me-5">
-                        <a class="nav-link" href="#">Salad</a>
+                        <a class="nav-link" href="javascript:void(0)" food-type="salad">Salad</a>
                     </li>
                     <li class="nav-item me-5">
-                        <a class="nav-link" href="#">Beef</a>
+                        <a class="nav-link" href="javascript:void(0)" food-type="beef">Beef</a>
                     </li>
                     <li class="nav-item me-5">
-                        <a class="nav-link" href="#">Pasta</a>
+                        <a class="nav-link" href="javascript:void(0)" food-type="pasta">Pasta</a>
                     </li>
                 </ul>
             </div>
@@ -40,8 +40,11 @@
     </nav>
 
     <div class="container py-5">
-        <div class="row gy-5 justify-content-center align-items-center" id="food-items">
+        <div class="loader-wrapper d-flex justify-content-center align-items-center mb-5 d-none">
             <div class="loader"></div>
+        </div>
+
+        <div class="row gy-5" id="food-items">
         </div>
     </div>
 
