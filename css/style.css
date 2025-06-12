@@ -58,6 +58,7 @@
     border-bottom: 2px solid #f6d353;
 }
 
-img {
-    height: 300px;
+.card-img-top {
+    object-fit: cover;
+    height: 200px;
 }
