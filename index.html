@@ -4,17 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore delicious recipes like pizza, salad, beef, and pasta using the Forkify API.">
     <title>My Food</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class=" bg-warning-subtle shadow-sm">
 
     <!-- Sticky Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">My Food</a>
+            <a class="navbar-brand" href="index.html">My Food</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarFood"
                 aria-controls="navbarFood" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -23,30 +24,30 @@
             <div class="collapse navbar-collapse" id="navbarFood">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item me-5">
-                        <a class="nav-link" href="javascript:void(0)" food-type="pizza">Pizza</a>
+                        <a class="nav-link d-inline-block" href="javascript:void(0)" food-type="pizza">Pizza</a>
                     </li>
                     <li class="nav-item me-5">
-                        <a class="nav-link" href="javascript:void(0)" food-type="salad">Salad</a>
+                        <a class="nav-link d-inline-block" href="javascript:void(0)" food-type="salad">Salad</a>
                     </li>
                     <li class="nav-item me-5">
-                        <a class="nav-link" href="javascript:void(0)" food-type="beef">Beef</a>
+                        <a class="nav-link d-inline-block" href="javascript:void(0)" food-type="beef">Beef</a>
                     </li>
                     <li class="nav-item me-5">
-                        <a class="nav-link" href="javascript:void(0)" food-type="pasta">Pasta</a>
+                        <a class="nav-link d-inline-block" href="javascript:void(0)" food-type="pasta">Pasta</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container py-5">
+    <main class="container py-5">
         <div class="loader-wrapper d-flex justify-content-center align-items-center mb-5 d-none">
             <div class="loader"></div>
         </div>
 
-        <div class="row gy-5" id="food-items">
+        <div class="row gy-4" id="food-items">
         </div>
-    </div>
+    </main>
 
     <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2025 My Food. All rights reserved.</p>
