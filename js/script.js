@@ -51,7 +51,12 @@ const foodItemsContainer = document.getElementById('food-items');
 
 function displayFoodCards(items) {
     if (!items || items.length === 0) {
-        throw new Error('No results found.');
+        foodItemsContainer.innerHTML = `
+            <div class="alert alert-warning text-center" role="alert">
+                <strong>No items found</strong> for this category. Please try another one.
+            </div>
+        `;
+        return;
     }
 
     items.forEach(item => {
