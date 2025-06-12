@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Food</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Sticky Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">My Food</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarFood"
+                aria-controls="navbarFood" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarFood">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item me-5">
+                        <a class="nav-link" href="#">Pizza</a>
+                    </li>
+                    <li class="nav-item me-5">
+                        <a class="nav-link" href="#">Salad</a>
+                    </li>
+                    <li class="nav-item me-5">
+                        <a class="nav-link" href="#">Beef</a>
+                    </li>
+                    <li class="nav-item me-5">
+                        <a class="nav-link" href="#">Pasta</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="row gy-5 justify-content-center align-items-center" id="food-items">
+            <div class="loader"></div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 My Food. All rights reserved.</p>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
