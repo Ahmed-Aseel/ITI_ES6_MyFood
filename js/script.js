@@ -1,44 +1,46 @@
 document.addEventListener('DOMContentLoaded', init);
 
 function init() {
-    attachNavLinkEvents();
+    attachNavLinkEvents(); // Set up event delegation on the navbar
+}
+
+// Attach click event listener to the navbar using event delegation
+function attachNavLinkEvents() {
+    const navbar = document.querySelector('#navbarFood');
+    navbar.addEventListener('click', handleNavClick);
+}
+
+// Handle navbar clicks and filter only food category links
+function handleNavClick(event) {
+    const clickedLink = event.target.closest('.nav-link[food-type]');
+    if (!clickedLink) return; // Exit if the click wasn't on a valid food category link
+
+    event.preventDefault();
+    const foodType = clickedLink.getAttribute('food-type');
+    setActiveNavLink(clickedLink); // Highlight the selected category
+    loadFoodItems(foodType);       // Fetch and display food items for the selected category
 }
 
 const navLinks = document.querySelectorAll('.nav-link[food-type]');
 
-function attachNavLinkEvents() {
-    navLinks.forEach(link => {
-        link.addEventListener('click', handleNavClick);
-    });
-}
-
-function handleNavClick(event) {
-    event.preventDefault();
-    const foodType = event.target.getAttribute('food-type');
-    setActiveNavLink(event.target);
-    loadFoodItems(foodType);
-}
-
+// Set the clicked nav link as active and remove active class from others
 function setActiveNavLink(activeLink) {
     navLinks.forEach(link => link.classList.remove('active'));
     activeLink.classList.add('active');
 }
 
+// Fetch food items and update UI accordingly
 function loadFoodItems(foodType) {
     clearFoodItems();
-    showLoader(true);
+    showLoader(true); // Show loader
 
     fetchFoodItems(foodType)
-        .then(data => {
-            showLoader(false);
-            displayFoodCards(data.recipes);
-        })
-        .catch(error => {
-            showLoader(false);
-            displayError(error);
-        });
+        .then(data => displayFoodCards(data.recipes))
+        .catch(error => displayError(error))
+        .finally(() => showLoader(false)); // Always hide the loader
 }
 
+// Perform an API request to fetch food items for a given category
 function fetchFoodItems(foodType) {
     const url = `https://forkify-api.herokuapp.com/api/search?q=${foodType}`;
     return fetch(url).then(response => {
@@ -59,6 +61,7 @@ function displayFoodCards(items) {
         return;
     }
 
+    // Create a card for each food item
     items.forEach(item => {
         const itemDiv = document.createElement('div');
         itemDiv.className = 'food-item col-sm-6 col-md-4 col-lg-3';
